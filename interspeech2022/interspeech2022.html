@@ -1,1 +1,138 @@
+<body>
 
+  <h1>BERT, can HE predict contrastive focus? Predicting and controlling prominence in neural TTS using a language model</h1>
+
+
+  <h3>The following audio clips were produced under different lookahead conditions (k=number of future words available at time of synthesis):
+    </br>
+    </br> 1. Full context
+    </br> 2. Ground truth k=1
+    </br> 3. GPT-2 predicted k=1
+    </br> 4. Randomly predicted k=1
+    </br> 5. k=0
+  </h3>
+
+  <div id="btnsDiv"></div>
+
+
+
+  <script>
+
+
+  var clips1 = [{audioFile: "./examples/interspeech2021/fullSent/0.wav", textContent:"Full Sentence"},
+  {audioFile:"./examples/interspeech2021/k1/0.wav", textContent:"GT k=1"},
+  {audioFile:"./examples/interspeech2021/pred/0.wav", textContent:"GPT-2 Pred k=1"},
+  {audioFile:"./examples/interspeech2021/rand/0.wav", textContent:"Random k=1"},
+  {audioFile:"./examples/interspeech2021/k0/0.wav", textContent:"k=0"}
+  ];
+
+  var clips2 = [{audioFile: "./examples/interspeech2021/fullSent/1.wav", textContent:"Full Sentence"},
+  {audioFile:"./examples/interspeech2021/k1/1.wav", textContent:"GT k=1"},
+  {audioFile:"./examples/interspeech2021/pred/1.wav", textContent:"GPT-2 Pred k=1"},
+  {audioFile:"./examples/interspeech2021/rand/1.wav", textContent:"Random k=1"},
+  {audioFile:"./examples/interspeech2021/k0/1.wav", textContent:"k=0"}
+  ];
+
+  var clips3 = [{audioFile: "./examples/interspeech2021/fullSent/2.wav", textContent:"Full Sentence"},
+  {audioFile:"./examples/interspeech2021/k1/2.wav", textContent:"GT k=1"},
+  {audioFile:"./examples/interspeech2021/pred/2.wav", textContent:"GPT-2 Pred k=1"},
+  {audioFile:"./examples/interspeech2021/rand/2.wav", textContent:"Random k=1"},
+  {audioFile:"./examples/interspeech2021/k0/2.wav", textContent:"k=0"}
+  ];
+
+  var clips4 = [{audioFile: "./examples/interspeech2021/fullSent/3.wav", textContent:"Full Sentence"},
+  {audioFile:"./examples/interspeech2021/k1/3.wav", textContent:"GT k=1"},
+  {audioFile:"./examples/interspeech2021/pred/3.wav", textContent:"GPT-2 Pred k=1"},
+  {audioFile:"./examples/interspeech2021/rand/3.wav", textContent:"Random k=1"},
+  {audioFile:"./examples/interspeech2021/k0/3.wav", textContent:"k=0"}
+  ];
+
+
+  var clips5 = [{audioFile: "./examples/interspeech2021/fullSent/4.wav", textContent:"Full Sentence"},
+  {audioFile:"./examples/interspeech2021/k1/4.wav", textContent:"GT k=1"},
+  {audioFile:"./examples/interspeech2021/pred/4.wav", textContent:"GPT-2 Pred k=1"},
+  {audioFile:"./examples/interspeech2021/rand/4.wav", textContent:"Random k=1"},
+  {audioFile:"./examples/interspeech2021/k0/4.wav", textContent:"k=0"}
+  ];
+
+
+
+
+  const sound = new Audio()
+
+  let btnsDiv = document.getElementById('btnsDiv');
+
+  var sent1 = document.createElement('p');
+  sent1.textContent += "There had been talk on the part of clerks and possible witnesses.";
+  btnsDiv.appendChild(sent1);
+
+  for(let i=0; i< clips1.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips1[i].audioFile
+    btn.textContent = clips1[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent2 = document.createElement('p');
+  sent2.textContent += "You are not that kind of woman.";
+  btnsDiv.appendChild(sent2);
+
+  for(let i=0; i< clips2.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips2[i].audioFile
+    btn.textContent = clips2[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent3 = document.createElement('p');
+  sent3.textContent += "Besides, he's not the sort of creature to complain.";
+  btnsDiv.appendChild(sent3);
+
+  for(let i=0; i< clips3.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips3[i].audioFile
+    btn.textContent = clips3[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent4 = document.createElement('p');
+  sent4.textContent += "Our own division, though fighting some, had lost but few men.";
+  btnsDiv.appendChild(sent4);
+
+  for(let i=0; i< clips4.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips4[i].audioFile
+    btn.textContent = clips4[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent5 = document.createElement('p');
+  sent5.textContent += "He loaded and fired a second time, when they were ordered to retreat.";
+  btnsDiv.appendChild(sent5);
+
+  for(let i=0; i< clips5.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips5[i].audioFile
+    btn.textContent = clips5[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+
+
+
+
+  function playClip() {
+    sound.src = event.target.audioFile
+    sound.play()
+  }
+
+  </script>
+
+
+
+</body>
