@@ -1,1 +1,128 @@
-hello
+<body>
+
+  <h1>Predicting boundaries for Alternative and Augmentative Communications</h1>
+
+
+  <h3>The uppercase words were synthesized using &lt;p0&gt; (no prominence), &lt;p1&gt; (intermediate prominence) or &lt;p2&gt; (strong prominence).
+    </br>
+  </h3>
+
+  <div id="btnsDiv"></div>
+
+
+
+  <script>
+
+
+  var clips1 = [
+  {audioFile:"./examples/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
+  ];
+
+  var clips2 = [
+  {audioFile:"./examples/058-110a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/058-110b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/058-110c.wav", textContent:"<p2>"}
+  ];
+
+  var clips3 = [
+  {audioFile:"./examples/058-29a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/058-29b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/058-29c.wav", textContent:"<p2>"}
+  ];
+
+  var clips4 = [
+  {audioFile:"./examples/058-27a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/058-27b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/058-27c.wav", textContent:"<p2>"}
+  ];
+
+
+  var clips5 = [
+  {audioFile:"./examples/051-46a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/051-46b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/051-46c.wav", textContent:"<p2>"}
+  ];
+
+
+
+
+  const sound = new Audio()
+
+  let btnsDiv = document.getElementById('btnsDiv');
+
+  var sent1 = document.createElement('p');
+  sent1.textContent += "Let me do it without further loss of time. Accept _MY_ thanks for the compliment you are paying me.";
+  btnsDiv.appendChild(sent1);
+
+  for(let i=0; i< clips1.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips1[i].audioFile
+    btn.textContent = clips1[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent2 = document.createElement('p');
+  sent2.textContent += "How soon any other wishes introduced themselves I can hardly tell, but I believe in about half an hour after I had seen _YOU_.";
+  btnsDiv.appendChild(sent2);
+
+  for(let i=0; i< clips2.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips2[i].audioFile
+    btn.textContent = clips2[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent3 = document.createElement('p');
+  sent3.textContent += "After a short pause, her companion added, _YOU_ are too generous to trifle with me.";
+  btnsDiv.appendChild(sent3);
+
+  for(let i=0; i< clips3.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips3[i].audioFile
+    btn.textContent = clips3[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent4 = document.createElement('p');
+  sent4.textContent += "But _YOUR_ family owe me nothing. Much as I respect them, I believe I thought only of you.";
+  btnsDiv.appendChild(sent4);
+
+  for(let i=0; i< clips4.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips4[i].audioFile
+    btn.textContent = clips4[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent5 = document.createElement('p');
+  sent5.textContent += "_SHE_ longed to see Mrs. Phillips, the Lucases, and all their other neighbours, and to hear herself called Mrs. Wickham by each of them;";
+  btnsDiv.appendChild(sent5);
+
+  for(let i=0; i< clips5.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips5[i].audioFile
+    btn.textContent = clips5[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+
+
+
+
+  function playClip() {
+    sound.src = event.target.audioFile
+    sound.play()
+  }
+
+  </script>
+
+
+
+</body>
