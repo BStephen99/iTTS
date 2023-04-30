@@ -20,10 +20,9 @@
 
 
   var clips1 = [{audioFile: "./examples/interspeech2021/fullSent/0.wav", textContent:"Full Sentence"},
-  {audioFile:"./examples/interspeech2021/k1/0.wav", textContent:"GT k=1"},
-  {audioFile:"./examples/interspeech2021/pred/0.wav", textContent:"GPT-2 Pred k=1"},
-  {audioFile:"./examples/interspeech2021/rand/0.wav", textContent:"Random k=1"},
-  {audioFile:"./examples/interspeech2021/k0/0.wav", textContent:"k=0"}
+  {audioFile:"./examples/interspeech2022/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/interspeech2022/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/interspeech2022/019-48c.wav", textContent:"<p2>"}
   ];
 
   var clips2 = [{audioFile: "./examples/interspeech2021/fullSent/1.wav", textContent:"Full Sentence"},
@@ -63,7 +62,7 @@
   let btnsDiv = document.getElementById('btnsDiv');
 
   var sent1 = document.createElement('p');
-  sent1.textContent += "There had been talk on the part of clerks and possible witnesses.";
+  sent1.textContent += "Let me do it without further loss of time. Accept _MY_ thanks for the compliment you are paying me.";
   btnsDiv.appendChild(sent1);
 
   for(let i=0; i< clips1.length; i++){
