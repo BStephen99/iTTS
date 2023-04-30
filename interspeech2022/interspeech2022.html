@@ -3,13 +3,8 @@
   <h1>BERT, can HE predict contrastive focus? Predicting and controlling prominence in neural TTS using a language model</h1>
 
 
-  <h3>The following audio clips were produced under different lookahead conditions (k=number of future words available at time of synthesis):
+  <h3>The uppercase words were synthesized using <p0> (no prominence), <p1> (intermediate prominence) or <p2> (strong prominence).
     </br>
-    </br> 1. Full context
-    </br> 2. Ground truth k=1
-    </br> 3. GPT-2 predicted k=1
-    </br> 4. Randomly predicted k=1
-    </br> 5. k=0
   </h3>
 
   <div id="btnsDiv"></div>
@@ -25,33 +20,29 @@
   {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
   ];
 
-  var clips2 = [{audioFile: "./examples/interspeech2021/fullSent/1.wav", textContent:"Full Sentence"},
-  {audioFile:"./examples/interspeech2021/k1/1.wav", textContent:"GT k=1"},
-  {audioFile:"./examples/interspeech2021/pred/1.wav", textContent:"GPT-2 Pred k=1"},
-  {audioFile:"./examples/interspeech2021/rand/1.wav", textContent:"Random k=1"},
-  {audioFile:"./examples/interspeech2021/k0/1.wav", textContent:"k=0"}
+  var clips2 = [
+  {audioFile:"./examples/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
   ];
 
-  var clips3 = [{audioFile: "./examples/interspeech2021/fullSent/2.wav", textContent:"Full Sentence"},
-  {audioFile:"./examples/interspeech2021/k1/2.wav", textContent:"GT k=1"},
-  {audioFile:"./examples/interspeech2021/pred/2.wav", textContent:"GPT-2 Pred k=1"},
-  {audioFile:"./examples/interspeech2021/rand/2.wav", textContent:"Random k=1"},
-  {audioFile:"./examples/interspeech2021/k0/2.wav", textContent:"k=0"}
+  var clips3 = [
+  {audioFile:"./examples/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
   ];
 
-  var clips4 = [{audioFile: "./examples/interspeech2021/fullSent/3.wav", textContent:"Full Sentence"},
-  {audioFile:"./examples/interspeech2021/k1/3.wav", textContent:"GT k=1"},
-  {audioFile:"./examples/interspeech2021/pred/3.wav", textContent:"GPT-2 Pred k=1"},
-  {audioFile:"./examples/interspeech2021/rand/3.wav", textContent:"Random k=1"},
-  {audioFile:"./examples/interspeech2021/k0/3.wav", textContent:"k=0"}
+  var clips4 = [
+  {audioFile:"./examples/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
   ];
 
 
-  var clips5 = [{audioFile: "./examples/interspeech2021/fullSent/4.wav", textContent:"Full Sentence"},
-  {audioFile:"./examples/interspeech2021/k1/4.wav", textContent:"GT k=1"},
-  {audioFile:"./examples/interspeech2021/pred/4.wav", textContent:"GPT-2 Pred k=1"},
-  {audioFile:"./examples/interspeech2021/rand/4.wav", textContent:"Random k=1"},
-  {audioFile:"./examples/interspeech2021/k0/4.wav", textContent:"k=0"}
+  var clips5 = [
+  {audioFile:"./examples/019-48a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/019-48b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/019-48c.wav", textContent:"<p2>"}
   ];
 
 
