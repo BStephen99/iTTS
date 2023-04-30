@@ -1,0 +1,149 @@
+<body>
+
+  <h1>What the future brings: Investigating the Impact of Lookahead for Incremental Neural TTS</h1>
+
+  <h3>The following audio clips were produced with varying degrees of lookahead (k=1: 1 space or punctuation mark,
+    k=2: 1 word, k=4: 2 words, k=6: 3 words):</h3>
+
+  <div id="btnsDiv"></div>
+
+  <h2>Incremental Synthesis</h2>
+
+  <img class="fit-picture"
+     src="concatenation.jpg"
+     alt="How sound clips are produced."
+     width="500" height="600">
+
+  <script>
+
+
+  var clips1 = [{audioFile: "Sent398.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent398_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent398_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent398_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent398_T6.wav", textContent:"k=6"}
+  ];
+
+  var clips2 = [{audioFile: "Sent621.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent621_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent621_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent621_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent621_T6.wav", textContent:"k=6"}
+  ];
+
+  var clips3 = [{audioFile: "Sent396.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent396_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent396_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent396_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent396_T6.wav", textContent:"k=6"}
+  ];
+
+  var clips4 = [{audioFile: "Sent794.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent794_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent794_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent794_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent794_T6.wav", textContent:"k=6"}
+  ];
+
+  var clips5 = [{audioFile: "Sent197.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent197_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent197_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent197_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent197_T6.wav", textContent:"k=6"}
+  ];
+
+  var clips6 = [{audioFile: "Sent397.wav", textContent:"Full Sentence"},
+  {audioFile:"./Sent397_T1.wav", textContent:"k=1"},
+  {audioFile:"./Sent397_T2.wav", textContent:"k=2"},
+  {audioFile:"./Sent397_T4.wav", textContent:"k=4"},
+  {audioFile:"./Sent397_T6.wav", textContent:"k=6"}
+  ];
+
+  const sound = new Audio()
+
+  let btnsDiv = document.getElementById('btnsDiv');
+
+  var sent1 = document.createElement('p');
+  sent1.textContent += "We don't get rid of a dozen numbers in a month.";
+  btnsDiv.appendChild(sent1);
+
+  for(let i=0; i< clips1.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips1[i].audioFile
+    btn.textContent = clips1[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent2 = document.createElement('p');
+  sent2.textContent += "It's all over with them, I fear and the gardener went his way.";
+  btnsDiv.appendChild(sent2);
+
+  for(let i=0; i< clips2.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips2[i].audioFile
+    btn.textContent = clips2[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent3 = document.createElement('p');
+  sent3.textContent += "He loaded and fired the second time, when they were ordered to retreat.";
+  btnsDiv.appendChild(sent3);
+
+  for(let i=0; i< clips3.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips3[i].audioFile
+    btn.textContent = clips3[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent4 = document.createElement('p');
+  sent4.textContent += "He no doubt would bring food of some kind with him.";
+  btnsDiv.appendChild(sent4);
+
+  for(let i=0; i< clips4.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips4[i].audioFile
+    btn.textContent = clips4[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent5 = document.createElement('p');
+  sent5.textContent += "You are not that kind of woman.";
+  btnsDiv.appendChild(sent5);
+
+  for(let i=0; i< clips5.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips5[i].audioFile
+    btn.textContent = clips5[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var sent6 = document.createElement('p');
+  sent6.textContent += "On Christmas Eve the weather was abominable.";
+  btnsDiv.appendChild(sent6);
+
+  for(let i=0; i< clips6.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips6[i].audioFile
+    btn.textContent = clips6[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+
+
+  function playClip() {
+    sound.src = event.target.audioFile
+    sound.play()
+  }
+
+  </script>
+
+
+
+</body>
