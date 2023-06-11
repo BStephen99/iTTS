@@ -51,6 +51,9 @@
   const sound = new Audio()
 
   let btnsDiv = document.getElementById('btnsDiv');
+    
+  var poss = document.createElement('p'); 
+  poss.textContent = "Prominence of control over possessive determiners is fairly consistent."
 
   var sent1 = document.createElement('p');
   sent1.textContent += "Let me do it without further loss of time. Accept _MY_ thanks for the compliment you are paying me.";
@@ -63,7 +66,22 @@
     btn.addEventListener("click", playClip);
     btnsDiv.appendChild(btn);
   }
+    
+  var sent4 = document.createElement('p');
+  sent4.textContent += "But _YOUR_ family owe me nothing. Much as I respect them, I believe I thought only of you.";
+  btnsDiv.appendChild(sent4);
 
+  for(let i=0; i< clips4.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips4[i].audioFile
+    btn.textContent = clips4[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var notposs = document.createElement('p'); 
+  poss.textContent = "Subjective and objective pronouns are less controllable."
+    
   var sent2 = document.createElement('p');
   sent2.textContent += "How soon any other wishes introduced themselves I can hardly tell, but I believe in about half an hour after I had seen _YOU_.";
   btnsDiv.appendChild(sent2);
@@ -88,17 +106,7 @@
     btnsDiv.appendChild(btn);
   }
 
-  var sent4 = document.createElement('p');
-  sent4.textContent += "But _YOUR_ family owe me nothing. Much as I respect them, I believe I thought only of you.";
-  btnsDiv.appendChild(sent4);
-
-  for(let i=0; i< clips4.length; i++){
-    let btn = document.createElement('button');
-    btn.audioFile = clips4[i].audioFile
-    btn.textContent = clips4[i].textContent
-    btn.addEventListener("click", playClip);
-    btnsDiv.appendChild(btn);
-  }
+ 
 
   var sent5 = document.createElement('p');
   sent5.textContent += "_SHE_ longed to see Mrs. Phillips, the Lucases, and all their other neighbours, and to hear herself called Mrs. Wickham by each of them;";
