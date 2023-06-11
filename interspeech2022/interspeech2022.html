@@ -44,6 +44,12 @@
   {audioFile:"./examples/051-46b.wav", textContent:"<p1>"},
   {audioFile:"./examples/051-46c.wav", textContent:"<p2>"}
   ];
+    
+  var clips6 = [
+  {audioFile:"./examples/020-52a.wav", textContent:"<p0>"},
+  {audioFile:"./examples/020-52b.wav", textContent:"<p1>"},
+  {audioFile:"./examples/020-52c.wav", textContent:"<p2>"}
+  ];
 
 
 
@@ -52,7 +58,7 @@
 
   let btnsDiv = document.getElementById('btnsDiv');
     
-  var poss = document.createElement('p'); 
+  var poss = document.createElement('h3'); 
   poss.textContent = "Prominence of control over possessive determiners is fairly consistent."
   btnsDiv.appendChild(poss);
 
@@ -79,8 +85,20 @@
     btn.addEventListener("click", playClip);
     btnsDiv.appendChild(btn);
   }
+    
+  var sent6 = document.createElement('p');
+  sent6.textContent += "He thought too well of himself to comprehend on what motives _HIS_ cousin could refuse him;";
+  btnsDiv.appendChild(sent5);
 
-  var notposs = document.createElement('p'); 
+  for(let i=0; i< clips6.length; i++){
+    let btn = document.createElement('button');
+    btn.audioFile = clips6[i].audioFile
+    btn.textContent = clips6[i].textContent
+    btn.addEventListener("click", playClip);
+    btnsDiv.appendChild(btn);
+  }
+
+  var notposs = document.createElement('h3'); 
   notposs.textContent = "Subjective and objective pronouns are less controllable."
   btnsDiv.appendChild(notposs);
     
